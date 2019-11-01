@@ -51,7 +51,7 @@ function getPath() {
 async function moveAndroidFiles() {
   if (Platform.OS === "android") {
     await RNFS.mkdir(RNFS.DocumentDirectoryPath + "/www");
-    const files = ["www/index.html", "www/game.js", "www/sprite.png"];
+    const files = ["www/index.html", "www/game.js", "www/sprite.png", "www/Teko-Bold.ttf"];
     await files.forEach(async file => {
       await RNFS.copyFileAssets(file, RNFS.DocumentDirectoryPath + "/" + file);
     });
