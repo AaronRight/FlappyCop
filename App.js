@@ -3,6 +3,7 @@ import { SafeAreaView, Text, View, Platform } from "react-native";
 import StaticServer from "react-native-static-server";
 import WebView from "react-native-webview";
 import RNFS from "react-native-fs";
+import { AdMobBanner } from "react-native-admob";
 
 class App extends React.Component {
   state = {
@@ -24,18 +25,16 @@ class App extends React.Component {
   }
 
   render() {
-    if (!this.state.url) {
-      return (
-        <SafeAreaView>
-          <Text>Hello World</Text>
-        </SafeAreaView>
-      );
-    }
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <WebView style={{ flex: 1 }} source={{ uri: this.state.url }} />
-        <View style={{ flex: 0.1 }}>
-          <Text>Place for admob</Text>
+        <View style={{ flex: 0.1, alignItems: "center", backgroundColor: '#505050' }}>
+          <AdMobBanner
+            adSize="banner"
+            adUnitID="ca-app-pub-5301941670325634/7440877684"
+            didFailToReceiveAdWithError={this.bannerError}
+            onAdFailedToLoad={error => console.error(error)}
+          />
         </View>
       </SafeAreaView>
     );
@@ -51,7 +50,12 @@ function getPath() {
 async function moveAndroidFiles() {
   if (Platform.OS === "android") {
     await RNFS.mkdir(RNFS.DocumentDirectoryPath + "/www");
-    const files = ["www/index.html", "www/game.js", "www/sprite.png", "www/Teko-Bold.ttf"];
+    const files = [
+      "www/index.html",
+      "www/game.js",
+      "www/sprite.png",
+      "www/Teko-Bold.ttf"
+    ];
     await files.forEach(async file => {
       await RNFS.copyFileAssets(file, RNFS.DocumentDirectoryPath + "/" + file);
     });
