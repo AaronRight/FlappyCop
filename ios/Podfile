@@ -28,11 +28,9 @@ target 'ReactNativeHTTPServer' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'react-native-static-server', :path => '../node_modules/react-native-static-server'
 
   pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
-  pod 'RNFS', :path => '../node_modules/react-native-fs'
 
   target 'ReactNativeHTTPServerTests' do
     inherit! :search_paths

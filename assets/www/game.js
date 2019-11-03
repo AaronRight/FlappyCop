@@ -128,14 +128,14 @@ const fg = {
 // BIRD
 const bird = {
   animation: [
-    { sX: 276, sY: 112 },
-    { sX: 276, sY: 139 },
-    { sX: 276, sY: 164 },
-    { sX: 276, sY: 139 }
+    { sX: 277, sY: 113 },
+    { sX: 277, sY: 139 },
+    { sX: 277, sY: 164 },
+    { sX: 277, sY: 139 }
   ],
   x: 50,
   y: 150,
-  w: 34,
+  w: 33,
   h: 26,
 
   radius: 12,
@@ -210,7 +210,7 @@ const bird = {
 // GET READY MESSAGE
 const getReady = {
   sX: 0,
-  sY: 229,
+  sY: 230,
   w: 173,
   h: 180,
   x: cvs.width / 2 - 173 / 2,
@@ -236,7 +236,7 @@ const getReady = {
 // GAME OVER MESSAGE
 const gameOver = {
   sX: 175,
-  sY: 228,
+  sY: 229,
   w: 245,
   h: 202,
   x: cvs.width / 2 - 225 / 2,
@@ -370,7 +370,7 @@ const env1 = {
 
   dog: {
     sX: 309,
-    sY: 112,
+    sY: 113,
     w: 40,
     h: 40
   },
